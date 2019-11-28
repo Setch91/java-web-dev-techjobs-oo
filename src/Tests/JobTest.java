@@ -33,7 +33,13 @@ public class JobTest {
         Job testClass2 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
         assertFalse(testClass.equals(testClass2));
     }
+    @Test
+    public void testBlankLine(){
+        Job testClass = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));;
+        Job.toString(testClass);
+        System.out.println(Job.toString(testClass));
 
+    }
     @Test
     public void emptyTest() {
         assertEquals(10,10,.001);
