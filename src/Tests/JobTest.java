@@ -35,10 +35,20 @@ public class JobTest {
     }
     @Test
     public void testBlankLine(){
-        Job testClass = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));;
-        Job.toString(testClass);
-        System.out.println(Job.toString(testClass));
-
+        Job testClass = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        Job testClass2 = testClass;
+        assertFalse(testClass.toString() == testClass2.toString().trim());
+    }
+    @Test
+    public void testFieldAndLabel(){
+        Job testClass = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        String testEmployer = "Employer: " + testClass.getEmployer();
+        assertEquals("Employer: ACME", testEmployer);
+    }
+    @Test
+    public void testIfEmpty(){
+        Job testClass = new Job("Product tester", new Employer(""), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        assertEquals("Data not available", testClass.getEmployer().toString());
     }
     @Test
     public void emptyTest() {

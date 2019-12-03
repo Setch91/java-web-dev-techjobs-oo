@@ -27,8 +27,8 @@ public class Job {
         this.coreCompetency = coreCompetency;
     }
 
-    public static String toString(Job testClass) {
-        String jobString = "\nId: " + testClass.getId() + "\nName: " + testClass.getName() + "\nEmployer: " + testClass.getEmployer() + "\nLocation: " + testClass.getLocation() + "\nPosition Type: " + testClass.getPositionType() + "\nCore Competency: " + testClass.getCoreCompetency() + "\n";
+    public String toString() {
+        String jobString = "\nId: " + this.getId() + "\nName: " + this.getName() + "\nEmployer: " + this.getEmployer() + "\nLocation: " + this.getLocation() + "\nPosition Type: " + this.getPositionType() + "\nCore Competency: " + this.getCoreCompetency() + "\n";
         return jobString;
     }
     // TODO: Add two constructors - one to initialize a unique ID and a second to initialize the
